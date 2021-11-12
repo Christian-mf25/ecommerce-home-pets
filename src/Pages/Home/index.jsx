@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 const Home = () => {
   const history = useHistory();
   const sendTo = (path) => {
-    history.push("/")
+    history.push("/");
   };
   return (
     <section>
