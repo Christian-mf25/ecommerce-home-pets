@@ -1,6 +1,7 @@
 import { Switch, Route } from "react-router-dom";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
+import Product from "../Pages/Product";
 import Register from "../Pages/Register";
 
 const Routes = () => {
@@ -17,6 +18,9 @@ const Routes = () => {
       </Route>
       <Route path="/category"></Route>
       <Route path="/cart"></Route>
+      <Route path="/product/:id">
+        <Product />
+      </Route>
     </Switch>
   );
 };
