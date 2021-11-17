@@ -1,3 +1,4 @@
+import { CartProvider } from "./Cart";
 import { ProductsProvider } from "./GetProducts";
 import { LoginProvider } from "./Login";
 import { RegisterProvider } from "./Register";
@@ -7,7 +8,9 @@ const Providers = ({ children }) => {
     <>
       <LoginProvider>
         <RegisterProvider>
-          <ProductsProvider>{children}</ProductsProvider>
+          <ProductsProvider>
+            <CartProvider>{children}</CartProvider>
+          </ProductsProvider>
         </RegisterProvider>
       </LoginProvider>
     </>
