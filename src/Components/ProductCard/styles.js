@@ -3,8 +3,10 @@ import styled from "styled-components";
 export const ProductContainer = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 
   div {
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
