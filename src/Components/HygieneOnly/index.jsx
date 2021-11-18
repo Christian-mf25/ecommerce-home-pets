@@ -8,7 +8,7 @@ const HigieneOnly = () => {
 
   return (
     <section className="products_bestSellers-home">
-      <h2>Medicamentos:</h2>
+      <h2>Higiene:</h2>
       <div className="grid_bestSellers_products">
         {products.map(
           (item, index) =>
