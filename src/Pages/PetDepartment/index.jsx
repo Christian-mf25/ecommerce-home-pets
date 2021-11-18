@@ -10,6 +10,10 @@ const PetDepartment = () => {
     <>
       <NavbarComponent />
       <p>{pet}</p>
+      <div>
+        <div>Melhores produtos</div>
+        <div>cards</div>
+      </div>
     </>
   );
 };

@@ -1,0 +1,22 @@
+.products_bestSellers-home {
+  margin: 15px;
+}
+.grid_bestSellers_products {
+  display: flex;
+  margin: 0 auto;
+  overflow-y: hidden;
+}
+
+.grid_bestSellers_products::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.grid_bestSellers_products::-webkit-scrollbar-track {
+  background: #e0e0e0; /* color of the tracking area */
+}
+
+.grid_bestSellers_products::-webkit-scrollbar-thumb {
+  background-color: #a592eb; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 1px solid #a592eb; /* creates padding around scroll thumb */
+}

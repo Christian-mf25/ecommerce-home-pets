@@ -8,15 +8,11 @@ import {
   FaHandHoldingMedical,
 } from "react-icons/fa";
 import LogoEcommerce from "../../assets/image/logo-ecommerce.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 const NavbarComponent = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [menuModal, setMenuModal] = useState(false);
-
-  useEffect(() => {
-    console.log(window.innerWidth);
-  }, [window.innerWidth]);
 
   window.addEventListener("resize", () => setWidth(window.innerWidth));
 
@@ -99,7 +95,6 @@ const NavbarComponent = () => {
       <nav className="menu_items-desktop">
         {width > 768 && (
           <>
-            {console.log(width)}
             <Link to="/">
               <figure>
                 <img src={LogoEcommerce} alt="Logo Ecommerce" />
@@ -131,7 +126,7 @@ const NavbarComponent = () => {
                   </div>
                 </li>
 
-                <Link to="login">
+                <Link to="/login">
                   <li>
                     <FaSignInAlt className="icon_menu" />
                     Entrar / Cadastrar
