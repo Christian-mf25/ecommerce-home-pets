@@ -18,6 +18,7 @@ function App() {
         draggable
         pauseOnHover
       />
+      <GlobalStyles />
       <Routes />
     </>
   );
