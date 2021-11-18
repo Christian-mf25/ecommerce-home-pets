@@ -8,9 +8,9 @@ import Footer from "../Footer";
 const ProductCard = () => {
   const { id } = useParams();
   const { products } = useProducts();
-  console.log(id);
-  const productToBeDisplayed = products.filter((item) => item.title === id);
-  console.log(products);
+  const productToBeDisplayed = products.filter(
+    (item) => item.id === Number(id)
+  );
 
   return (
     <>

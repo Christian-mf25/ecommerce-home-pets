@@ -4,6 +4,7 @@ export const ProductContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  margin-bottom: 10px;
 
   div {
     margin-top: 15px;
