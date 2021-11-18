@@ -12,6 +12,22 @@ const ProductCard = () => {
     (item) => item.id === Number(id)
   );
 
+  const newPrice = productToBeDisplayed[0]?.price.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+
+  const priceDiscount = productToBeDisplayed[0]?.price * 0.2;
+  console.log(priceDiscount);
+
+  const newPriceDisc = priceDiscount.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+  console.log(newPriceDisc);
+
+  console.log(newPrice);
+
   return (
     <>
       <NavbarComponent />
@@ -21,9 +37,10 @@ const ProductCard = () => {
             <img alt={products.title} src={product.img} />
             <div>
               <h3>{product.title}</h3>
+              <p>{product.description}</p>
               <p>{product.category}</p>
-              <h4>R$ {product.price}</h4>
-              <h5>Valor a ser doado: R$ {(product.price * 0.2).toFixed(2)}</h5>
+              <h4> {newPrice}</h4>
+              <h5>Valor a ser doado: {newPriceDisc}</h5>
               <PrimaryButton>Adicionar ao carrinho</PrimaryButton>
             </div>
           </div>
