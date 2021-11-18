@@ -10,6 +10,7 @@
   grid-gap: 30px;
   margin: 20px;
   justify-content: center;
+  cursor: pointer;
 }
 
 .div_cardProduct figure {

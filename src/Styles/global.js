@@ -263,6 +263,7 @@ export const NavMenuModal = styled.nav`
     justify-content: space-between;
     padding: 15px;
     box-sizing: border-box;
+    align-items: center;
   }
 
   > .items_menu-popup {
@@ -274,6 +275,9 @@ export const NavMenuModal = styled.nav`
         padding-left: 15px;
         color: var(--color-white-95);
 
+        a .icon_menu {
+          color: var(--color-white-95);
+        }
         > .icon_menu {
           margin-right: 10px;
         }
