@@ -9,7 +9,7 @@ const PetDepartment = () => {
   const { products } = useContext(ProductsContext);
 
   const nameCategory =
-    category === "pets-food"
+    category === "pet-food"
       ? "ração"
       : category === "medicament"
       ? "medicação"

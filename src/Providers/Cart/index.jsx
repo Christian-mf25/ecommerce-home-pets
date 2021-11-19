@@ -10,7 +10,6 @@ export const CartProvider = ({ children }) => {
   const token = JSON.parse(localStorage.getItem("@Pets:token"));
 	const idUser = JSON.parse(localStorage.getItem("@Pets:userId"))
 
-	console.log(idUser)
   const getCart = () => {
     api
       .get("/cart", {
@@ -25,7 +24,6 @@ export const CartProvider = ({ children }) => {
   };
 
   const addToCart = (data) => {
-		console.log(data)
     api
       .post(
         "/cart/",
@@ -69,12 +67,16 @@ export const CartProvider = ({ children }) => {
     getCart();
   }, [action]);
 
-  const total = cart.reduce((acc, item) => {
+  const totalCart = cart.reduce((acc, item) => {
     return acc + item.price;
   }, 0);
 
+	const total = cart.reduce((acc, item) => {
+    return acc + item.price;
+  }, 25);
+
   return (
-    <CartContext.Provider value={{ removeFromCart, addToCart, cart, total }}>
+    <CartContext.Provider value={{ totalCart, removeFromCart, addToCart, cart, total }}>
       {children}
     </CartContext.Provider>
   );

@@ -53,7 +53,6 @@ const LoginForm = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const handleChange = (prop) => (event) => {
-    console.log(values.password);
     setValues({ ...values, [prop]: event.target.value });
   };
 

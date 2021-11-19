@@ -1,4 +1,5 @@
 import "./styles.css";
+import "./style.css";
 import { Header, NavMenuModal } from "../../Styles/global";
 import { BiMenu, BiCart, BiX } from "react-icons/bi";
 import { FaSignOutAlt } from "react-icons/fa";
@@ -21,7 +22,6 @@ const NavbarComponent = () => {
   window.addEventListener("resize", () => setWidth(window.innerWidth));
 
   const modalMenuMobile = () => {
-    console.log("oi");
     setMenuModal(!menuModal);
   };
 
