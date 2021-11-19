@@ -1,6 +1,18 @@
 import styled from "styled-components";
 
-export const Section = styled.section`
+export const Container = styled.section`
+	
+	@media (min-width: 991px){
+		/* background-color: red; */
+		display: flex;
+		flex-direction: row-reverse;
+		flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-around;
+	}
+`
+
+export const Section = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -9,6 +21,7 @@ export const Section = styled.section`
   background-color: var(--color-gray-0);
   width: 90%;
   margin: 15px auto;
+	max-width: 368px;
 
 	.description {
     font-size: 1.2rem;
@@ -29,6 +42,10 @@ export const Section = styled.section`
 		.MuiFormControl-root{
 			margin: 0;
 		}
+
+	@media (min-width: 991px){
+		margin: 15px 0;
+	}
 `;
 
 export const DivSpace = styled.div`
