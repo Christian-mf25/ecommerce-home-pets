@@ -7,6 +7,8 @@ export const Product = styled.li`
   margin: 20px auto;
   padding: 10px 5px;
 	border-radius: 5px;
+	max-width: 517px;
+	max-height: 138px;
 
   .text {
     display: flex;
@@ -14,6 +16,7 @@ export const Product = styled.li`
     flex-wrap: nowrap;
     align-items: flex-start;
     justify-content: space-evenly;
+		margin-left: 10px;
   }
 
   img {
