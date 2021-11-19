@@ -2,12 +2,14 @@ import { useParams } from "react-router";
 import { useProducts } from "../../Providers/Products";
 import { PrimaryButton } from "../../Styles/global";
 import { ProductContainer } from "./styles";
+import { useCart } from "../../Providers/Cart";
 import NavbarComponent from "../../Components/Navbar";
 import Footer from "../Footer";
 
 const ProductCard = () => {
   const { id } = useParams();
   const { products } = useProducts();
+  const { addToCart } = useCart();
   const productToBeDisplayed = products.filter(
     (item) => item.id === Number(id)
   );
@@ -41,7 +43,9 @@ const ProductCard = () => {
               <p>{product.category}</p>
               <h4> {newPrice}</h4>
               <h5>Valor a ser doado: {newPriceDisc}</h5>
-              <PrimaryButton>Adicionar ao carrinho</PrimaryButton>
+              <PrimaryButton onClick={addToCart}>
+                Adicionar ao carrinho
+              </PrimaryButton>
             </div>
           </div>
         ))}

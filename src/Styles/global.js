@@ -291,3 +291,28 @@ export const NavMenuModal = styled.nav`
     width: 500px;
   }
 `;
+
+export const Password = styled(FormControl)`
+  &.MuiFormControl-root {
+    margin: 0;
+    width: 100%;
+    color: var(--color-gray-50);
+    background-color: var(--color-gray-0);
+    fieldset {
+      border: none;
+    }
+    .Mui-focused fieldset {
+      border: solid 2px var(--color-secondary);
+    }
+    &:hover fieldset {
+      border: 1px solid var(--color-secondary);
+    }
+    & label.Mui-focused {
+      color: var(--color-gray-50);
+    }
+    svg {
+      color: var(--color-secondary);
+      z-index: 1;
+    }
+  }
+`;
