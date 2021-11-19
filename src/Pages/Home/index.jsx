@@ -4,6 +4,7 @@ import BestSellersProducts from "../../Components/BestSellersProducts";
 import PortionOnly from "../../Components/PortionOnly";
 import MedicamentOnly from "../../Components/MedicamentOnly";
 import HygieneOnly from "../../Components/HygieneOnly";
+import Footer from "../../Components/Footer";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <PortionOnly />
       <MedicamentOnly />
       <HygieneOnly />
+      <Footer />
     </section>
   );
 };

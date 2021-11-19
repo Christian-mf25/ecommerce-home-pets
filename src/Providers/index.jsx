@@ -1,3 +1,5 @@
+import { CartProvider } from "./Cart";
+import { ProductsProvider } from "./GetProducts";
 import { LoginProvider } from "./Login";
 import { RegisterProvider } from "./Register";
 import { ProductsProvider } from "./Products/index.jsx";
@@ -5,11 +7,13 @@ import { ProductsProvider } from "./Products/index.jsx";
 const Providers = ({ children }) => {
   return (
     <>
-      <ProductsProvider>
-        <LoginProvider>
-          <RegisterProvider>{children}</RegisterProvider>
-        </LoginProvider>
-      </ProductsProvider>
+      <LoginProvider>
+        <RegisterProvider>
+          <ProductsProvider>
+            <CartProvider>{children}</CartProvider>
+          </ProductsProvider>
+        </RegisterProvider>
+      </LoginProvider>
     </>
   );
 };
