@@ -1,7 +1,6 @@
-
 import "./styles.css";
 import { Header, NavMenuModal } from "../../Styles/global";
-import { BiMenu, BiCart } from "react-icons/bi";
+import { BiMenu, BiCart, BiX } from "react-icons/bi";
 import { FaSignOutAlt } from "react-icons/fa";
 import {
   FaPaw,
