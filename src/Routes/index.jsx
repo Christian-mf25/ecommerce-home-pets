@@ -18,7 +18,7 @@ const Routes = () => {
       <Route exact path="/register">
         <Register />
       </Route>
-      <Route exact path="/departments/:pet">
+      <Route exact path="/departments/:category">
         <PetDepartment />
       </Route>
       <Route path="/cart"></Route>
