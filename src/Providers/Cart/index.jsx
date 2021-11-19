@@ -5,7 +5,7 @@ import api from "../../Services/api";
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+	const [cart, setCart] = useState([]);
   const [action, setAction] = useState(false);
   const token = JSON.parse(localStorage.getItem("@Pets:token"));
 
@@ -64,11 +64,15 @@ export const CartProvider = ({ children }) => {
     getCart();
   }, [action]);
 
+  const total = cart.reduce((acc, item) => {
+    return acc + item.price;
+  }, 0);
+
   return (
-    <CartContext.Provider value={{ removeFromCart, addToCart, cart }}>
+    <CartContext.Provider value={{ removeFromCart, addToCart, cart, total }}>
       {children}
     </CartContext.Provider>
   );
 };
 
-export const useCart = () => useContext(CartContext)
+export const useCart = () => useContext(CartContext);
