@@ -1,7 +1,10 @@
 import { Switch, Route } from "react-router-dom";
+import Cart from "../Pages/Cart";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
+import Product from "../Pages/Product";
 import Register from "../Pages/Register";
+import PetDepartment from "../Pages/PetDepartment";
 
 const Routes = () => {
   return (
@@ -9,14 +12,21 @@ const Routes = () => {
       <Route exact path="/">
         <Home />
       </Route>
-      <Route path="/login">
+      <Route exact path="/login">
         <Login />
       </Route>
-      <Route path="/register">
+      <Route exact path="/register">
         <Register />
       </Route>
-      <Route path="/category"></Route>
-      <Route path="/cart"></Route>
+      <Route exact path="/departments/:category">
+        <PetDepartment />
+      </Route>
+      <Route path="/cart">
+        <Cart />
+      </Route>
+      <Route path="/product/:id">
+        <Product />
+      </Route>
     </Switch>
   );
 };

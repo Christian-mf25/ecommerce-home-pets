@@ -1,0 +1,55 @@
+.BannerHome {
+  display: flex;
+  width: 100%;
+  grid-gap: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+.BannerHome figure {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.BannerHome figure img {
+  width: 100%;
+  height: 100%;
+}
+
+.cardAdopt {
+  background-image: url("../../assets/image/pets-ong-purple-60.png");
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  width: auto;
+  display: flex;
+  color: var(--color-gray-20);
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.cardAdopt > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cardAdopt .arrow {
+  display: flex;
+  align-items: center;
+}
+.cardAdopt .arrow > svg {
+  color: var(--color-gray-20);
+  font-size: 21px;
+}
+
+@media (min-width: 690px) {
+  .BannerHome {
+    flex-direction: row;
+  }
+  .cardAdopt {
+    height: auto;
+  }
+  .cardAdopt > div:nth-child(1) {
+    align-items: center;
+  }
+}
