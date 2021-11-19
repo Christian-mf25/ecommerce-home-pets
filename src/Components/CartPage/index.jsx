@@ -1,16 +1,20 @@
-import { InputLabel, MenuItem, Select } from "@material-ui/core";
 import { useOngCompanies } from "../../Providers/OngCompanies";
+import { InputLabel, Select } from "@material-ui/core";
 import { useCart } from "../../Providers/Cart";
+import { DivSpace, Section } from "./style";
+import { useHistory } from "react-router";
+import NavbarComponent from "../Navbar";
 import CartCard from "../CartCard";
+import Footer from "../Footer";
 import {
   PrimaryButton,
   SecondaryButton,
   StyledFormControl,
 } from "../../Styles/global";
-import { DivSpace, Section } from "./style";
 
 const CartPage = () => {
-  const { cart, total } = useCart();
+	const history = useHistory()
+  const { cart, total, totalCart } = useCart();
   const { users, handleChange, ong } = useOngCompanies();
 
   const objJson = cart.map((item) => JSON.stringify(item));
@@ -21,6 +25,7 @@ const CartPage = () => {
 
   return (
     <>
+		<NavbarComponent />
       <Section>
         <DivSpace>
           <h1>Meu Carrinho</h1>
@@ -28,7 +33,7 @@ const CartPage = () => {
           <div className="flex">
             <p className="description">Subtotal:</p>
             <span className="bold">
-              {total.toLocaleString("pt-BR", {
+              {totalCart.toLocaleString("pt-BR", {
                 style: "currency",
                 currency: "BRL",
               })}
@@ -86,7 +91,9 @@ const CartPage = () => {
             Continuar para o pagamento
           </PrimaryButton>
 
-          <SecondaryButton className="button-back">Voltar e escolher mais produtos</SecondaryButton>
+          <SecondaryButton
+						onClick={() => history.push("/")}
+					className="button-back">Voltar e escolher mais produtos</SecondaryButton>
 
         </DivSpace>
 
@@ -94,12 +101,13 @@ const CartPage = () => {
       </Section>
 
       <ul>
-        {newCart.map((item, index) => (
+        {newCart.map((item) => (
           <>
             <CartCard item={item} key={item.id} />
           </>
         ))}
       </ul>
+			<Footer />
     </>
   );
 };

@@ -9,7 +9,6 @@ export const LoginProvider = ({ children }) => {
   const history = useHistory();
 
   const login = (data) => {
-    console.log(data);
     api
       .post("/login/", data)
       .then((res) => {
