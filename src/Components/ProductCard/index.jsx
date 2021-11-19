@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import { useProducts } from "../../Providers/GetProducts";
+import { useProducts } from "../../Providers/Products";
 import { PrimaryButton } from "../../Styles/global";
 import { ProductContainer } from "./styles";
 import { useCart } from "../../Providers/Cart";

@@ -1,3 +1,4 @@
+
 import "./styles.css";
 import { Header, NavMenuModal } from "../../Styles/global";
 import { BiMenu, BiCart } from "react-icons/bi";
@@ -10,17 +11,13 @@ import {
   FaHandHoldingMedical,
 } from "react-icons/fa";
 import LogoEcommerce from "../../assets/image/logo-ecommerce.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLogin } from "../../Providers/Login";
 const NavbarComponent = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [menuModal, setMenuModal] = useState(false);
   const { logOut } = useLogin();
-
-  useEffect(() => {
-    console.log(window.innerWidth);
-  }, [window.innerWidth]);
 
   window.addEventListener("resize", () => setWidth(window.innerWidth));
 
@@ -34,7 +31,7 @@ const NavbarComponent = () => {
       <nav className="menu_items-mobile">
         {width <= 768 && (
           <>
-            <BiMenu onClick={() => modalMenuMobile()} />
+            <BiMenu className="icon_menu" onClick={() => modalMenuMobile()} />
             <Link to="/">
               <figure>
                 <img src={LogoEcommerce} alt="Logo Ecommerce" />
@@ -43,30 +40,34 @@ const NavbarComponent = () => {
             {menuModal ? (
               <BiCart className="cart_forTablet-remove" />
             ) : (
-              <BiCart />
+              <Link to="/cart">
+                <BiCart className="icon_menu" />
+              </Link>
             )}
           </>
         )}
         {menuModal && (
           <NavMenuModal>
             <div className="header_menu-popup">
-              <BiMenu onClick={() => modalMenuMobile()} />
+              <BiX className="icon_menu" onClick={() => modalMenuMobile()} />
               <Link to="/">
                 <figure>
                   <img src={LogoEcommerce} alt="Logo Ecommerce" />
                 </figure>
               </Link>
-              <BiCart />
+              <Link to="/cart">
+                <BiCart className="icon_menu" />
+              </Link>
             </div>
             <div className="items_menu-popup">
               <ul>
-                <Link>
-                  <li to="/">
+                <Link to="/" onClick={() => modalMenuMobile()}>
+                  <li>
                     <FaHome className="icon_menu" />
                     Home
                   </li>
                 </Link>
-                <Link to="/login">
+                <Link to="/login" onClick={() => modalMenuMobile()}>
                   <li>
                     <FaSignInAlt className="icon_menu" />
                     Entrar / Cadastrar
@@ -77,19 +78,28 @@ const NavbarComponent = () => {
                   <p>Departamentos</p>
                 </li>
 
-                <Link to="/departments/pet-food">
+                <Link
+                  to="/departments/pet-food"
+                  onClick={() => modalMenuMobile()}
+                >
                   <li>
                     <FaPaw className="icon_menu" />
                     Ração
                   </li>
                 </Link>
-                <Link to="/departments/medicament">
+                <Link
+                  to="/departments/medicament"
+                  onClick={() => modalMenuMobile()}
+                >
                   <li>
                     <FaHandHoldingMedical className="icon_menu" />
                     Medicamentos
                   </li>
                 </Link>
-                <Link to="/departments/hygiene">
+                <Link
+                  to="/departments/hygiene"
+                  onClick={() => modalMenuMobile()}
+                >
                   <li>
                     <FaHandHoldingMedical className="icon_menu" />
                     Higigene
@@ -107,7 +117,6 @@ const NavbarComponent = () => {
       <nav className="menu_items-desktop">
         {width > 768 && (
           <>
-            {console.log(width)}
             <Link to="/">
               <figure>
                 <img src={LogoEcommerce} alt="Logo Ecommerce" />
@@ -139,7 +148,7 @@ const NavbarComponent = () => {
                   </div>
                 </li>
 
-                <Link to="login">
+                <Link to="/login">
                   <li>
                     <FaSignInAlt className="icon_menu" />
                     Entrar / Cadastrar
