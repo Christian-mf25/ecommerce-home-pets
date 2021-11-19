@@ -20,15 +20,11 @@ const ProductCard = () => {
   });
 
   const priceDiscount = productToBeDisplayed[0]?.price * 0.2;
-  console.log(priceDiscount);
 
   const newPriceDisc = priceDiscount.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
   });
-  console.log(newPriceDisc);
-
-  console.log(newPrice);
 
   return (
     <>
@@ -43,7 +39,7 @@ const ProductCard = () => {
               <p>{product.category}</p>
               <h4> {newPrice}</h4>
               <h5>Valor a ser doado: {newPriceDisc}</h5>
-              <PrimaryButton onClick={addToCart}>
+              <PrimaryButton onClick={() => addToCart(product)}>
                 Adicionar ao carrinho
               </PrimaryButton>
             </div>

@@ -4,8 +4,6 @@ import { Link, useHistory } from "react-router-dom";
 const CardProduct = ({ bestProduct }) => {
   const history = useHistory();
 
-  console.log(bestProduct.id);
-
   return (
     <>
       <Link to={`/product/${bestProduct.id}`}>

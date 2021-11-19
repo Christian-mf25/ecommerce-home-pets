@@ -8,7 +8,9 @@ export const CartProvider = ({ children }) => {
 	const [cart, setCart] = useState([]);
   const [action, setAction] = useState(false);
   const token = JSON.parse(localStorage.getItem("@Pets:token"));
+	const idUser = JSON.parse(localStorage.getItem("@Pets:userId"))
 
+	console.log(idUser)
   const getCart = () => {
     api
       .get("/cart", {
@@ -23,9 +25,10 @@ export const CartProvider = ({ children }) => {
   };
 
   const addToCart = (data) => {
+		console.log(data)
     api
       .post(
-        "/cart",
+        "/cart/",
         {
           description: data.description,
           category: data.category,
@@ -33,6 +36,8 @@ export const CartProvider = ({ children }) => {
           price: data.price,
           title: data.title,
           img: data.img,
+					id: data.id,
+					userId: idUser
         },
         {
           headers: {

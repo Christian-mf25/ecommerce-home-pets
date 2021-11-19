@@ -34,7 +34,7 @@ const LoginForm = () => {
   });
 
   useEffect(() => {
-    token && sendTo("/home");
+    token && sendTo("/");
   }, [token]);
 
   const sendTo = (path) => {
