@@ -1,16 +1,21 @@
-import { PrimaryButton } from "../../Styles/global";
-import { useHistory } from "react-router";
+import NavbarComponent from "../../Components/Navbar";
+import HeaderBannerHome from "../../Components/HeaderBannerHome/index.jsx";
+import BestSellersProducts from "../../Components/BestSellersProducts";
+import PortionOnly from "../../Components/PortionOnly";
+import MedicamentOnly from "../../Components/MedicamentOnly";
+import HygieneOnly from "../../Components/HygieneOnly";
+import Footer from "../../Components/Footer";
+
 const Home = () => {
-  const history = useHistory();
-  const sendTo = (path) => {
-    history.push("/");
-  };
   return (
     <section>
-      <h1>Home</h1>
-      <PrimaryButton onClick={() => history.push("/login")}>
-        Ir para login
-      </PrimaryButton>
+      <NavbarComponent></NavbarComponent>
+      <HeaderBannerHome />
+      <BestSellersProducts />
+      <PortionOnly />
+      <MedicamentOnly />
+      <HygieneOnly />
+      <Footer />
     </section>
   );
 };
