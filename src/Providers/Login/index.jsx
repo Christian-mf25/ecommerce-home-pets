@@ -9,6 +9,7 @@ export const LoginProvider = ({ children }) => {
   const history = useHistory();
 
   const login = (data) => {
+    console.log(data);
     api
       .post("/login/", data)
       .then((res) => {
@@ -29,7 +30,8 @@ export const LoginProvider = ({ children }) => {
   const logOut = () => {
     toast.success("Até mais");
     localStorage.clear();
-    history.push("/");
+    return (window.location.href =
+      "https://landing-page-git-develop-christian-mf25.vercel.app/");
   };
 
   return (

@@ -1,5 +1,7 @@
+import "./styles.css";
 import { Header, NavMenuModal } from "../../Styles/global";
 import { BiMenu, BiCart } from "react-icons/bi";
+import { FaSignOutAlt } from "react-icons/fa";
 import {
   FaPaw,
   FaSignInAlt,
@@ -10,9 +12,11 @@ import {
 import LogoEcommerce from "../../assets/image/logo-ecommerce.png";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useLogin } from "../../Providers/Login";
 const NavbarComponent = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [menuModal, setMenuModal] = useState(false);
+  const { logOut } = useLogin();
 
   useEffect(() => {
     console.log(window.innerWidth);
@@ -91,6 +95,10 @@ const NavbarComponent = () => {
                     Higigene
                   </li>
                 </Link>
+                <li onClick={logOut} className="logout">
+                  <FaSignOutAlt className="icon_menu" />
+                  Logout
+                </li>
               </ul>
             </div>
           </NavMenuModal>
@@ -140,6 +148,12 @@ const NavbarComponent = () => {
                 <Link to="/cart">
                   <li>
                     <FaShoppingCart />
+                  </li>
+                </Link>
+                <Link onClick={logOut}>
+                  <li className="logout">
+                    <FaSignOutAlt className="icon_menu" />
+                    Logout
                   </li>
                 </Link>
               </ul>
