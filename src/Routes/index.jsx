@@ -21,7 +21,9 @@ const Routes = () => {
       <Route exact path="/departments/:category">
         <PetDepartment />
       </Route>
-      <Route path="/cart"></Route>
+      <Route path="/cart">
+        <Cart />
+      </Route>
       <Route path="/product/:id">
         <Product />
       </Route>
