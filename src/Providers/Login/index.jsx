@@ -29,8 +29,7 @@ export const LoginProvider = ({ children }) => {
   const logOut = () => {
     toast.success("Até mais");
     localStorage.clear();
-    return (window.location.href =
-      "https://landing-page-git-develop-christian-mf25.vercel.app/");
+    return (window.location.href = "https://home-pets.vercel.app/");
   };
 
   return (
